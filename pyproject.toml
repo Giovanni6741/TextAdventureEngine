@@ -1,7 +1,7 @@
 [project]
 name = "textadventure-engine"
 version = "0.1.0"
-description = "Una libreria python per la creazione di pccoli minigiochi testuali."
+description = "Una libreria python per la creazione di piccoli minigiochi testuali."
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [
