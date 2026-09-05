@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+src/textadventure/__init__.py
+src/textadventure/engine.py
+src/textadventure/parser.py
+src/textadventure/scene.py
+src/textadventure/state.py
+src/textadventure.egg-info/PKG-INFO
+src/textadventure.egg-info/SOURCES.txt
+src/textadventure.egg-info/dependency_links.txt
+src/textadventure.egg-info/requires.txt
+src/textadventure.egg-info/top_level.txt
+tests/test_engine.py
+tests/test_scene.py
