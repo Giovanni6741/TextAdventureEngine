@@ -22,17 +22,17 @@ Progettato per essere semplice da usare, facile da estendere e adatto sia a picc
 ## 📦 Installazione
 
 ### Installazione da GitHub
-
-pip install git+https://github.com/Giovanni6741/textadventure-engine.git
-
-### Installazione locale (sviluppo)
-
-pip install .[dev]
-
----
 ```
-## 🧱 Struttura del progetto
+pip install git+https://github.com/Giovanni6741/TextAdventureEngine.git
+```
+### Installazione locale (sviluppo)
+```
+pip install .[dev]
+```
+---
 
+## 🧱 Struttura del progetto
+```
 textadventure-engine/
 │   pyproject.toml
 │   README.md
@@ -76,9 +76,9 @@ engine.run()
 ## 🧪 Test
 
 Per eseguire i test:
-
+```
 pytest
-
+```
 I test verificano:
 - comportamento della classe Scene
 - ciclo del motore GameEngine
