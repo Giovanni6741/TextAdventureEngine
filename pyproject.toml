@@ -1,23 +1,20 @@
 [project]
-name = "textadventure-engine"
-version = "0.1.0"
-description = "Una libreria python per la creazione di piccoli minigiochi testuali."
-readme = "README.md"
-requires-python = ">=3.10"
+name = "textadventure"
+version = "1.0.0"
+description = "Una librerie per creare una piccola avventura testuale."
 authors = [
     { name = "Giovanni Benedetto Galeazzi" }
 ]
-license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
 
 dependencies = []
 
-[project.urls]
-Homepage = "https://github.com/tuo-username/textadventure-engine"
-Repository = "https://github.com/tuo-username/textadventure-engine"
-
-[tool.pytest.ini_options]
-pythonpath = "src"
-addopts = "-ra"
+[project.optional-dependencies]
+dev = [
+    "pytest"
+]
 
 [build-system]
 requires = ["setuptools>=61.0"]
