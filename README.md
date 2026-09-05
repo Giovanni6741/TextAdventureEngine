@@ -23,7 +23,7 @@ Progettato per essere semplice da usare, facile da estendere e adatto sia a picc
 
 ### Installazione da GitHub
 
-pip install git+https://github.com/<tuo-username>/textadventure-engine.git
+pip install git+https://github.com/Giovanni6741/textadventure-engine.git
 
 ### Installazione locale (sviluppo)
 
@@ -54,7 +54,7 @@ textadventure-engine/
 ## 🚀 Come iniziare
 
 ### 1. Crea una scena
-
+```
 from textadventure import Scene
 
 class Intro(Scene):
@@ -62,15 +62,15 @@ class Intro(Scene):
         print("Benvenuto nel gioco!")
         command = input("> ")
         return parser.parse(command, state)
-
+```
 ### 2. Avvia il motore
-
+```
 from textadventure import GameEngine, Parser, State
 from intro import Intro
 
 engine = GameEngine(Intro(), State(), Parser())
 engine.run()
-
+```
 ---
 
 ## 🧪 Test
