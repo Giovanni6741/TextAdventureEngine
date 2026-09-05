@@ -1,17 +1,18 @@
+from .scene import Scene
+from .parser import Parser
+from .state import State
+
 class GameEngine:
-    def __init__(self, initial_scene, state, parser):
+    def __init__(self, initial_scene: Scene, state: State, parser: Parser):
         self.scene = initial_scene
         self.state = state
         self.parser = parser
 
     def run(self):
-        # Finché esiste una scena, il gioco continua
+        """
+        Esegue il ciclo principale del gioco.
+        Continua finché la scena corrente non restituisce None.
+        """
         while self.scene is not None:
-            # Esegui la scena corrente
             next_scene = self.scene.enter(self.state, self.parser)
-
-            # Aggiorna la scena corrente
             self.scene = next_scene
-
-        # Quando self.scene diventa None, il ciclo termina
-        return
