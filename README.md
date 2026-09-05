@@ -30,7 +30,7 @@ pip install git+https://github.com/<tuo-username>/textadventure-engine.git
 pip install .[dev]
 
 ---
-
+```
 ## 🧱 Struttura del progetto
 
 textadventure-engine/
@@ -48,7 +48,7 @@ textadventure-engine/
 └── tests/
     ├── test_engine.py
     └── test_scene.py
-
+```
 ---
 
 ## 🚀 Come iniziare
@@ -88,7 +88,7 @@ I test verificano:
 ## ⚙️ Workflow GitHub Actions
 
 Il repository include un workflow che esegue automaticamente i test ad ogni push:
-
+```
 name: Run Tests
 on: [push, pull_request]
 jobs:
@@ -101,7 +101,7 @@ jobs:
           python-version: "3.10"
       - run: pip install .[dev]
       - run: pytest -q
-
+```
 ---
 
 ## 📜 Licenza
