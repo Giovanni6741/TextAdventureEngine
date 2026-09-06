@@ -13,12 +13,11 @@ dependencies = []
 
 [project.optional-dependencies]
 dev = [
-    "pytest"
+    "pytest",
+    "sphinx",
+    "furo"
 ]
 
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
-
-[project.optional-dependencies]
-dev = ["sphinx", "furo"]
