@@ -1,5 +1,7 @@
 # textadventure-engine
 
+[![Docs](https://img.shields.io/badge/docs-online-blue)](https://giovanni6741.github.io/TextAdventureEngine/)
+
 Un motore minimale, estensibile e testato per creare giochi di avventura testuale in Python.  
 Progettato per essere semplice da usare, facile da estendere e adatto sia a piccoli progetti personali che a librerie più complesse.
 
