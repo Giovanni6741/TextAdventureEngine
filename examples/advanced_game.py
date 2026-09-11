@@ -14,6 +14,7 @@ from textadventure import (
 
 class Entrance(Scene):
     def enter(self, state, parser):
+        state.current_scene = "entrance"
         print("\n=== INGRESSO ===")
         print("Ti trovi all'ingresso di un antico dungeon.")
         print("Comandi: guarda stanza, mappa, avanti, inventario, esci")
@@ -24,6 +25,7 @@ class Entrance(Scene):
 
 class Corridor(Scene):
     def enter(self, state, parser):
+        state.current_scene = "corridor"
         print("\n=== CORRIDOIO ===")
         print("Un lungo corridoio illuminato da torce.")
         print("Comandi: guarda stanza, mappa, avanti, indietro, inventario, esci")
@@ -34,6 +36,7 @@ class Corridor(Scene):
 
 class TreasureRoom(Scene):
     def enter(self, state, parser):
+        state.current_scene = "treasure"
         print("\n=== SALA DEL TESORO ===")
         print("Una stanza piena di monete d'oro.")
         print("Comandi: guarda stanza, mappa, prendi oro, indietro, inventario, esci")
@@ -50,36 +53,45 @@ class AdventureParser(Parser):
     def parse(self, command, state):
         cmd = command.strip().lower()
 
-        # movimento
+        # MOVIMENTO
         if cmd == "avanti":
             if state.player_pos == (0, 0):
                 state.player_pos = (1, 0)
+                state.current_scene = "corridor"
                 return state.scenes["corridor"]
+
             if state.player_pos == (1, 0):
                 state.player_pos = (1, 1)
+                state.current_scene = "treasure"
                 return state.scenes["treasure"]
 
         if cmd == "indietro":
             if state.player_pos == (1, 1):
                 state.player_pos = (1, 0)
+                state.current_scene = "corridor"
                 return state.scenes["corridor"]
+
             if state.player_pos == (1, 0):
                 state.player_pos = (0, 0)
+                state.current_scene = "entrance"
                 return state.scenes["entrance"]
 
-        # inventario
+        # INVENTARIO
         if cmd == "prendi oro":
             state.inventory.append("Monete d'oro")
             print("Hai preso delle monete d'oro.")
-            return state.scenes["treasure"]
-
-        # HUD / MAPPA / STANZA
-        if cmd == "inventario":
-            print("\n=== INVENTARIO ===")
-            for item in state.inventory:
-                print(f"- {item}")
             return state.scenes[state.current_scene]
 
+        if cmd == "inventario":
+            print("\n=== INVENTARIO ===")
+            if not state.inventory:
+                print("(vuoto)")
+            else:
+                for item in state.inventory:
+                    print(f"- {item}")
+            return state.scenes[state.current_scene]
+
+        # MAPPA
         if cmd == "mappa":
             print("\n=== MINIMAPPA ===")
             drawer = AdvancedMapDraw(
@@ -91,6 +103,7 @@ class AdventureParser(Parser):
             print(drawer.draw())
             return state.scenes[state.current_scene]
 
+        # STANZA
         if cmd == "guarda stanza":
             print("\n=== STANZA ===")
             drawer = AdvancedSceneDraw(
@@ -103,7 +116,7 @@ class AdventureParser(Parser):
             print(drawer.draw())
             return state.scenes[state.current_scene]
 
-        # uscita
+        # USCITA
         if cmd in ("esci", "exit", "quit"):
             print("Hai deciso di terminare l'avventura.")
             return None
@@ -122,15 +135,16 @@ class AdventureState(State):
         self.scenes = {}
         self.player_pos = (0, 0)
         self.inventory = []
+        self.current_scene = "entrance"
 
-        # mappa del dungeon
+        # MAPPA DEL DUNGEON
         self.map = {
             (0, 0): "Start",
             (1, 0): "Corridoio",
             (1, 1): "Tesoro",
         }
 
-        # heatmap dei pericoli
+        # HEATMAP PERICOLI
         self.danger = {
             (0, 0): 0,
             (1, 0): 1,
