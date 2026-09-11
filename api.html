@@ -239,6 +239,71 @@
 <h1>API Reference<a class="headerlink" href="#api-reference" title="Link to this heading">¶</a></h1>
 <p>Documentazione automatica delle API del pacchetto <code class="docutils literal notranslate"><span class="pre">textadventure</span></code>.</p>
 <dl class="py class" id="module-textadventure">
+<dt class="sig sig-object py" id="textadventure.AdvancedMapDraw">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">textadventure.</span></span><span class="sig-name descname"><span class="pre">AdvancedMapDraw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game_state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_coords</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wireframe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zoom</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#textadventure.AdvancedMapDraw" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Minimappa avanzata completa:
+- icone ASCII avanzate
+- heatmap
+- wireframe
+- zoom
+- radar
+- colori ANSI
+- cornice</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="textadventure.AdvancedMapDraw.DOOR_COLOR">
+<span class="sig-name descname"><span class="pre">DOOR_COLOR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[90m'</span></em><a class="headerlink" href="#textadventure.AdvancedMapDraw.DOOR_COLOR" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="textadventure.AdvancedMapDraw.HEATMAP_COLORS">
+<span class="sig-name descname"><span class="pre">HEATMAP_COLORS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{0:</span> <span class="pre">'\x1b[32m',</span> <span class="pre">1:</span> <span class="pre">'\x1b[33m',</span> <span class="pre">2:</span> <span class="pre">'\x1b[38;5;208m',</span> <span class="pre">3:</span> <span class="pre">'\x1b[31m'}</span></em><a class="headerlink" href="#textadventure.AdvancedMapDraw.HEATMAP_COLORS" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="textadventure.AdvancedMapDraw.ICON_MAP">
+<span class="sig-name descname"><span class="pre">ICON_MAP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'Boss':</span> <span class="pre">'☠',</span> <span class="pre">'Corridoio':</span> <span class="pre">'⌁',</span> <span class="pre">'Danger':</span> <span class="pre">'⚔',</span> <span class="pre">'NPC':</span> <span class="pre">'⚑',</span> <span class="pre">'Puzzle':</span> <span class="pre">'⌘',</span> <span class="pre">'Shop':</span> <span class="pre">'✪',</span> <span class="pre">'Start':</span> <span class="pre">'⌂',</span> <span class="pre">'Tesoro':</span> <span class="pre">'★'}</span></em><a class="headerlink" href="#textadventure.AdvancedMapDraw.ICON_MAP" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="textadventure.AdvancedMapDraw.PLAYER_COLOR">
+<span class="sig-name descname"><span class="pre">PLAYER_COLOR</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[36m'</span></em><a class="headerlink" href="#textadventure.AdvancedMapDraw.PLAYER_COLOR" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="textadventure.AdvancedMapDraw.RADAR_COLORS">
+<span class="sig-name descname"><span class="pre">RADAR_COLORS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{0:</span> <span class="pre">'\x1b[36m',</span> <span class="pre">1:</span> <span class="pre">'\x1b[32m',</span> <span class="pre">2:</span> <span class="pre">'\x1b[33m',</span> <span class="pre">3:</span> <span class="pre">'\x1b[38;5;208m',</span> <span class="pre">4:</span> <span class="pre">'\x1b[31m'}</span></em><a class="headerlink" href="#textadventure.AdvancedMapDraw.RADAR_COLORS" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="textadventure.AdvancedMapDraw.RESET">
+<span class="sig-name descname"><span class="pre">RESET</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'\x1b[0m'</span></em><a class="headerlink" href="#textadventure.AdvancedMapDraw.RESET" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="textadventure.AdvancedMapDraw.draw">
+<span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#textadventure.AdvancedMapDraw.draw" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="textadventure.AdvancedSceneDraw">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">textadventure.</span></span><span class="sig-name descname"><span class="pre">AdvancedSceneDraw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">doors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">objects</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">player_pos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#textadventure.AdvancedSceneDraw" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Disegno avanzato della stanza in ASCII:
+- bordi squadrati
+- porte (N, S, E, W)
+- oggetti
+- posizione del giocatore</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="textadventure.AdvancedSceneDraw.draw">
+<span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#textadventure.AdvancedSceneDraw.draw" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="textadventure.GameEngine">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">textadventure.</span></span><span class="sig-name descname"><span class="pre">GameEngine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_scene</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="scene.html#textadventure.scene.Scene" title="textadventure.scene.Scene"><span class="pre">Scene</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="state.html#textadventure.state.State" title="textadventure.state.State"><span class="pre">State</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="parser.html#textadventure.parser.Parser" title="textadventure.parser.Parser"><span class="pre">Parser</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#textadventure.GameEngine" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
@@ -248,6 +313,42 @@
 <dd><p>Esegue il ciclo principale del gioco.
 Continua finché la scena corrente non restituisce None.</p>
 </dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="textadventure.HUD">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">textadventure.</span></span><span class="sig-name descname"><span class="pre">HUD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#textadventure.HUD" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Mostra una barra HUD con informazioni sullo stato del giocatore.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="textadventure.HUD.draw">
+<span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#textadventure.HUD.draw" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="textadventure.InventoryDraw">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">textadventure.</span></span><span class="sig-name descname"><span class="pre">InventoryDraw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inventory</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#textadventure.InventoryDraw" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Disegna l’inventario del giocatore in formato ASCII.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="textadventure.InventoryDraw.draw">
+<span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#textadventure.InventoryDraw.draw" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="textadventure.MapDraw">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">textadventure.</span></span><span class="sig-name descname"><span class="pre">MapDraw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game_state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#textadventure.MapDraw" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Disegna una minimappa ASCII basata sulle coordinate delle stanze.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="textadventure.MapDraw.draw">
+<span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#textadventure.MapDraw.draw" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -284,9 +385,27 @@ Deve:
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="textadventure.SceneDraw">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">textadventure.</span></span><span class="sig-name descname"><span class="pre">SceneDraw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#textadventure.SceneDraw" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Disegna una stanza ASCII con bordi squadrati.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="textadventure.SceneDraw.draw">
+<span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#textadventure.SceneDraw.draw" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="textadventure.State">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">textadventure.</span></span><span class="sig-name descname"><span class="pre">State</span></span><a class="headerlink" href="#textadventure.State" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="textadventure.box">
+<span class="sig-prename descclassname"><span class="pre">textadventure.</span></span><span class="sig-name descname"><span class="pre">box</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#textadventure.box" title="Link to this definition">¶</a></dt>
+<dd><p>Incornicia un testo in un box ASCII.</p>
 </dd></dl>
 
 </section>
@@ -339,8 +458,34 @@ Deve:
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">API Reference</a><ul>
+<li><a class="reference internal" href="#textadventure.AdvancedMapDraw"><code class="docutils literal notranslate"><span class="pre">AdvancedMapDraw</span></code></a><ul>
+<li><a class="reference internal" href="#textadventure.AdvancedMapDraw.DOOR_COLOR"><code class="docutils literal notranslate"><span class="pre">AdvancedMapDraw.DOOR_COLOR</span></code></a></li>
+<li><a class="reference internal" href="#textadventure.AdvancedMapDraw.HEATMAP_COLORS"><code class="docutils literal notranslate"><span class="pre">AdvancedMapDraw.HEATMAP_COLORS</span></code></a></li>
+<li><a class="reference internal" href="#textadventure.AdvancedMapDraw.ICON_MAP"><code class="docutils literal notranslate"><span class="pre">AdvancedMapDraw.ICON_MAP</span></code></a></li>
+<li><a class="reference internal" href="#textadventure.AdvancedMapDraw.PLAYER_COLOR"><code class="docutils literal notranslate"><span class="pre">AdvancedMapDraw.PLAYER_COLOR</span></code></a></li>
+<li><a class="reference internal" href="#textadventure.AdvancedMapDraw.RADAR_COLORS"><code class="docutils literal notranslate"><span class="pre">AdvancedMapDraw.RADAR_COLORS</span></code></a></li>
+<li><a class="reference internal" href="#textadventure.AdvancedMapDraw.RESET"><code class="docutils literal notranslate"><span class="pre">AdvancedMapDraw.RESET</span></code></a></li>
+<li><a class="reference internal" href="#textadventure.AdvancedMapDraw.draw"><code class="docutils literal notranslate"><span class="pre">AdvancedMapDraw.draw()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#textadventure.AdvancedSceneDraw"><code class="docutils literal notranslate"><span class="pre">AdvancedSceneDraw</span></code></a><ul>
+<li><a class="reference internal" href="#textadventure.AdvancedSceneDraw.draw"><code class="docutils literal notranslate"><span class="pre">AdvancedSceneDraw.draw()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#textadventure.GameEngine"><code class="docutils literal notranslate"><span class="pre">GameEngine</span></code></a><ul>
 <li><a class="reference internal" href="#textadventure.GameEngine.run"><code class="docutils literal notranslate"><span class="pre">GameEngine.run()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#textadventure.HUD"><code class="docutils literal notranslate"><span class="pre">HUD</span></code></a><ul>
+<li><a class="reference internal" href="#textadventure.HUD.draw"><code class="docutils literal notranslate"><span class="pre">HUD.draw()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#textadventure.InventoryDraw"><code class="docutils literal notranslate"><span class="pre">InventoryDraw</span></code></a><ul>
+<li><a class="reference internal" href="#textadventure.InventoryDraw.draw"><code class="docutils literal notranslate"><span class="pre">InventoryDraw.draw()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#textadventure.MapDraw"><code class="docutils literal notranslate"><span class="pre">MapDraw</span></code></a><ul>
+<li><a class="reference internal" href="#textadventure.MapDraw.draw"><code class="docutils literal notranslate"><span class="pre">MapDraw.draw()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#textadventure.Parser"><code class="docutils literal notranslate"><span class="pre">Parser</span></code></a><ul>
@@ -351,7 +496,12 @@ Deve:
 <li><a class="reference internal" href="#textadventure.Scene.enter"><code class="docutils literal notranslate"><span class="pre">Scene.enter()</span></code></a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#textadventure.SceneDraw"><code class="docutils literal notranslate"><span class="pre">SceneDraw</span></code></a><ul>
+<li><a class="reference internal" href="#textadventure.SceneDraw.draw"><code class="docutils literal notranslate"><span class="pre">SceneDraw.draw()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#textadventure.State"><code class="docutils literal notranslate"><span class="pre">State</span></code></a></li>
+<li><a class="reference internal" href="#textadventure.box"><code class="docutils literal notranslate"><span class="pre">box()</span></code></a></li>
 </ul>
 </li>
 </ul>
