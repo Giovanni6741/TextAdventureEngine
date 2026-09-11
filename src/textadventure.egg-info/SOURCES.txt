@@ -3,9 +3,16 @@ README.md
 pyproject.toml
 src/textadventure/__init__.py
 src/textadventure/engine.py
+src/textadventure/hud.py
+src/textadventure/inventory_draw.py
+src/textadventure/map_draw.py
+src/textadventure/map_draw_advanced.py
 src/textadventure/parser.py
 src/textadventure/scene.py
+src/textadventure/scene_draw.py
+src/textadventure/scene_draw_advanced.py
 src/textadventure/state.py
+src/textadventure/utils.py
 src/textadventure.egg-info/PKG-INFO
 src/textadventure.egg-info/SOURCES.txt
 src/textadventure.egg-info/dependency_links.txt
